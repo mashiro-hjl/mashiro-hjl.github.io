@@ -132,6 +132,17 @@
           <a href="/tags/%E6%B5%8B%E8%AF%95/" style="font-size: 2em; color: #f7c068">测试</a> <a href="/tags/%E6%B5%8B%E8%AF%951/" style="font-size: 2em; color: #f7c068">测试1</a> <a href="/tags/%E6%B5%8B%E8%AF%952/" style="font-size: 2em; color: #f7c068">测试2</a> <a href="/tags/%E6%B5%8B%E8%AF%95%E6%A0%87%E7%AD%BE%E5%A4%A7%E5%B0%8F1/" style="font-size: 2em; color: #f7c068">测试标签大小1</a> <a href="/tags/%E6%B5%8B%E8%AF%95%E6%A0%87%E7%AD%BE%E5%A4%A7%E5%B0%8F2/" style="font-size: 2em; color: #f7c068">测试标签大小2</a> <a href="/tags/%E6%B5%8B%E8%AF%95%E6%A0%87%E7%AD%BE%E5%A4%A7%E5%B0%8F3/" style="font-size: 2em; color: #f7c068">测试标签大小3</a> <a href="/tags/%E6%B5%8B%E8%AF%95%E6%A0%87%E7%AD%BE%E5%A4%A7%E5%B0%8F4/" style="font-size: 2em; color: #f7c068">测试标签大小4</a>
         </div>
       </div>
+<script>
+    var color=new Array("#f7c068","#f9a664","#fd725c","#ff5858","#94e1f4","#4dc2e0","#9bc2f3");
+    var max=document.getElementsByClassName("tags-cloud")[0].children.length;
+    for(var i=0;i<=max-1;i++){
+        var num=parseInt(Math.random()*(6+1),10);        // 颜色随机
+        var fontsize=Math.floor(Math.random()*(42-16+1)+16);   //字体大小随机
+        console.log(fontsize);
+        document.getElementsByClassName("tags-cloud")[0].children[i].style.fontSize=fontsize+"px";
+        document.getElementsByClassName("tags-cloud")[0].children[i].style.color=color[i];
+    }
+</script> 
     </article>
   
 
