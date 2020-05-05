@@ -30,7 +30,7 @@
 
   
     <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-    <link href="https://cdn.bootcss.com/highlight.js/9.15.6/styles/default.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/highlight.js/9.15.6/styles/monokai.min.css" rel="stylesheet">
   
 
   
@@ -62,8 +62,6 @@
           <li class="navbar-list-item"><a href="/">主页</a></li>
         
           <li class="navbar-list-item"><a href="/about">关于</a></li>
-        
-          <li class="navbar-list-item"><a href="/links">链接</a></li>
         
           <li class="navbar-list-item"><a href="/tags">标签</a></li>
         
@@ -136,8 +134,8 @@
     var color=new Array("#f7c068","#f9a664","#fd725c","#ff5858","#94e1f4","#4dc2e0","#9bc2f3");
     var max=document.getElementsByClassName("tags-cloud")[0].children.length;
     for(var i=0;i<=max-1;i++){
-        var num=parseInt(Math.random()*(6+1),10);        // 颜色随机
-        var fontsize=Math.floor(Math.random()*(42-16+1)+16);   //字体大小随机
+        var num=parseInt(Math.random()*(6+1),10);        	// 颜色随机
+        var fontsize=Math.floor(Math.random()*(42-16+1)+16);    //字体大小随机
         console.log(fontsize);
         document.getElementsByClassName("tags-cloud")[0].children[i].style.fontSize=fontsize+"px";
         document.getElementsByClassName("tags-cloud")[0].children[i].style.color=color[i];
@@ -148,6 +146,10 @@
 
   
   
+
+  
+  
+
 
   
   
@@ -166,6 +168,7 @@
     
 
     
+
 
     <p>Powered by <a href="https://hexo.io" target="_blank" rel="noopener noreferrer">Hexo</a> Theme - <a href="https://github.com/miiiku/flex-block" target="_blank" rel="noopener noreferrer author">flex-block</a></p>
   </div>
