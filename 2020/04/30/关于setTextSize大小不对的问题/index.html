@@ -20,7 +20,7 @@
 
   
 
-  <title>我的第一篇博客文章 | 程序三的个人博客</title>
+  <title>关于setTextSize大小不对的问题 | 程序三的个人博客</title>
 
   
 
@@ -91,12 +91,12 @@
   
   
     <div class="header-content">
-      <div class="post-image" style="background-image: url(https://i.loli.net/2020/05/03/vQ3IxwCdkJsNo5n.png)"></div>
+      <div class="post-image" style="background-image: url(https://i.loli.net/2020/05/11/t1IxpB8LbnMrolq.jpg)"></div>
       <div class="post-text">
         <div class="type-wrap">
-          <a class="article-category-link" href="/categories/%E6%B5%8B%E8%AF%95/">测试</a>
+          <a class="article-category-link" href="/categories/Android/">Android</a>
         </div>
-        <h1 class="title-wrap">我的第一篇博客文章</h1>
+        <h1 class="title-wrap">关于setTextSize大小不对的问题</h1>
         <h2 class="title-sub-wrap">
           <strong>时崎狂三</strong>
           <span>发布于</span>
@@ -126,21 +126,15 @@
       
 
       <section class="article-entry">
-        <h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><p>内容1</p>
-<p><img src="https://i.loli.net/2020/05/05/kRLtwWc4pdTPSXA.png" alt="logo"></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java">System.out.print(<span class="hljs-string">"测试用代码"</span>);<br>System.out.print(<span class="hljs-string">"测试用代码"</span>);<br>System.out.print(<span class="hljs-string">"测试用代码"</span>);<br>System.out.print(<span class="hljs-string">"测试用代码"</span>);<br><span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;<br><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> myclass&#123;<br>    <span class="hljs-keyword">int</span> j=<span class="hljs-number">2</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+        <p>&emsp;&emsp;今天在做小练习的时候发现对TextView设置的字体大小不对，这里是因为layout文件里使用的单位是sp，我们通过动态设置传递过去的也是以sp单位的，所以导致了大小不对的情况，这里只需要在设置大小的时候指定单位即可解决。<br>&emsp;&emsp;Android系统中，默认的单位是像素(px)。也就是说，在没有明确说明的情况下，所有的大小设置都是以像素为单位。setTextSize传入的单位是px,TextView.setTextSize默认传入的单位是sp。  </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java">setTextSize(<span class="hljs-keyword">int</span> unit, <span class="hljs-keyword">int</span> size)<br><br>TypedValue.COMPLEX_UNIT_PX : Pixels<br><br>TypedValue.COMPLEX_UNIT_SP : Scaled Pixels<br><br>TypedValue.COMPLEX_UNIT_DIP : Device Independent Pixels<br></code></pre></td></tr></table></figure>
 
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">print(<span class="hljs-number">2</span>*<span class="hljs-number">4</span>)<br></code></pre></td></tr></table></figure>
-
-
-<hr>
-<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><p>内容2</p>
-<hr>
+<p>&emsp;&emsp;说个题外话，这个问题是我舍友发现的，因为我用的是sdk自带的模拟器进行测试的，并没有出现问题，是正常显示的，我舍友用的是外部模拟器，他那个就会出现这样的问题。它在虚拟机上能正常运行，但在真机上出现错误。我在百度上也没有找到答案。</p>
 
       </section>
 
       <section class="article-footer">
-        
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/" rel="tag">#Android</a></li></ul>
       </section>
 
       <section class="article-navs">
@@ -153,11 +147,11 @@
           
             <div class="card-cover" style="background-image: url(https://i.loli.net/2020/05/03/vQ3IxwCdkJsNo5n.png)"></div>
           
-          <a class="card-link article-nav-link" href="/2020/04/30/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/"></a>
+          <a class="card-link article-nav-link" href="/2020/04/30/%E5%85%B3%E4%BA%8EAndroid%20%E7%9A%84R%20cannot%20be%20resolved%20to%20a%20variable%E9%97%AE%E9%A2%98/"></a>
           <strong class="article-nav-caption">Newer</strong>
           <p class="article-nav-title">
             
-              我的第一篇博客文章
+              关于Android 的R cannot be resolved to a variable问题
             
           </p>
         </article>
