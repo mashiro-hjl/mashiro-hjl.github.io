@@ -20,7 +20,7 @@
 
   
 
-  <title>Tag: Android | 程序三的个人博客</title>
+  <title>添加button和onClickListener后Attempt to invoke virtual method的问题 | 程序三的个人博客</title>
 
   
 
@@ -74,7 +74,7 @@
 
     
 <!-- header container -->
-<header class="header-container">
+<header class="header-container post">
 
   
   
@@ -87,17 +87,27 @@
 
   
   
-    
+
+  
+  
     <div class="header-content">
-      <div class="post-image" style="background-image: url(https://i.loli.net/2020/05/03/vQ3IxwCdkJsNo5n.png)"></div>
+      <div class="post-image" style="background-image: url(https://i.loli.net/2020/05/14/L1olMTJOXmRVvcH.png)"></div>
       <div class="post-text">
-        <h1 class="title-wrap">Android</h1>
-        <h2 class="title-sub-wrap">当前标签下共有3篇文章</h2>
+        <div class="type-wrap">
+          <a class="article-category-link" href="/categories/Android/">Android</a>
+        </div>
+        <h1 class="title-wrap">添加button和onClickListener后Attempt to invoke virtual method的问题</h1>
+        <h2 class="title-sub-wrap">
+          <strong>时崎狂三</strong>
+          <span>发布于</span>
+          
+  <a href="javascript:;" class="article-date">
+    <time datetime="2020-05-14T05:32:24.000Z" itemprop="datePublished">2020-05-14</time>
+  </a>
+
+        </h2>
       </div>
     </div>
-  
-
-  
   
 
   
@@ -105,96 +115,60 @@
 
   </header>
 
-    <!-- 标签归档 -->
+    <!-- 文章 -->
 
-<!-- post list container -->
-<div class="body-container float">
-  <div class="content-container article-list">
-    <div class="card-container card-articles">
-      <div class="card-wrap">
+<!-- 文章内容 -->
+
+<div class="body-container">
+  <article class="content-container article-container">
+    <div class="article-content">
+      
+      
+
+      <section class="article-entry">
+        <p>setContentView这个方法一定要在findViewById方法之前，不然就会出错：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java">java.lang.NullPointerException: Attempt to invoke virtual method <span class="hljs-string">'void android.widget.Button.setOnClickListener(android.view.View$OnClickListener)'</span> on a <span class="hljs-keyword">null</span> object reference<br></code></pre></td></tr></table></figure>
+
+<p>错误的写法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java">Button goback=(Button) findViewById(R.id.goback);<br>setContentView(R.layout.register);<br></code></pre></td></tr></table></figure>
+<p>正确的写法:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java">setContentView(R.layout.register);<br>Button goback=(Button) findViewById(R.id.goback);<br></code></pre></td></tr></table></figure>
+<p>这是因为我这个控件在register布局里面，在没有切换到register布局时，我这个控件是空的，所以才会报空指针异常，重新检查了一遍就能发现了。</p>
+
+      </section>
+
+      <section class="article-footer">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/" rel="tag">#Android</a></li></ul>
+      </section>
+
+      <section class="article-navs">
         
+<nav class="card-container card-article-nav">
+  <div class="card-wrap">
+    
+    
+      <div id="article-nav-older" class="card-item img">
+        <article>
           
-          <div class="card-item large img">
-            <article>
-              
-                <div class="card-cover" style="background-image: url(https://i.loli.net/2020/05/14/L1olMTJOXmRVvcH.png)"></div>
-              
-              
-                <a class="article-link card-link" href="/2020/05/14/%E6%B7%BB%E5%8A%A0button%E5%92%8Conclicklistener%E5%90%8EAttempt%20to%20invoke%20virtual%20method/" itemprop="url"></a>
-              
-              <h2 class="article-title">添加button和onClickListener后Attempt to invoke virtual method的问题</h2>
-              <div class="article-meta">
-                <strong>时崎狂三</strong>
-                <span>发布于</span>
-                
-  <a href="/2020/05/14/%E6%B7%BB%E5%8A%A0button%E5%92%8Conclicklistener%E5%90%8EAttempt%20to%20invoke%20virtual%20method/" class="article-date">
-    <time datetime="2020-05-14T05:32:24.000Z" itemprop="datePublished">2020-05-14</time>
-  </a>
-
-              </div>
-              <div class="article-category">
-                <a class="article-category-link" href="/categories/Android/">Android</a>
-              </div>
-            </article>
-          </div>
-        
+            <div class="card-cover" style="background-image: url(https://i.loli.net/2020/05/03/vQ3IxwCdkJsNo5n.png)"></div>
           
-          <div class="card-item large img">
-            <article>
-              
-                <div class="card-cover" style="background-image: url(https://i.loli.net/2020/05/03/vQ3IxwCdkJsNo5n.png)"></div>
-              
-              
-                <a class="article-link card-link" href="/2020/04/30/%E5%85%B3%E4%BA%8EAndroid%20%E7%9A%84R%20cannot%20be%20resolved%20to%20a%20variable%E9%97%AE%E9%A2%98/" itemprop="url"></a>
-              
-              <h2 class="article-title">关于Android 的R cannot be resolved to a variable问题</h2>
-              <div class="article-meta">
-                <strong>时崎狂三</strong>
-                <span>发布于</span>
-                
-  <a href="/2020/04/30/%E5%85%B3%E4%BA%8EAndroid%20%E7%9A%84R%20cannot%20be%20resolved%20to%20a%20variable%E9%97%AE%E9%A2%98/" class="article-date">
-    <time datetime="2020-04-30T07:47:24.000Z" itemprop="datePublished">2020-04-30</time>
-  </a>
-
-              </div>
-              <div class="article-category">
-                <a class="article-category-link" href="/categories/Android/">Android</a>
-              </div>
-            </article>
-          </div>
-        
-          
-          <div class="card-item img">
-            <article>
-              
-                <div class="card-cover" style="background-image: url(https://i.loli.net/2020/05/11/t1IxpB8LbnMrolq.jpg)"></div>
-              
-              
-                <a class="article-link card-link" href="/2020/04/30/%E5%85%B3%E4%BA%8EsetTextSize%E5%A4%A7%E5%B0%8F%E4%B8%8D%E5%AF%B9%E7%9A%84%E9%97%AE%E9%A2%98/" itemprop="url"></a>
-              
-              <h2 class="article-title">关于setTextSize大小不对的问题</h2>
-              <div class="article-meta">
-                <strong>时崎狂三</strong>
-                <span>发布于</span>
-                
-  <a href="/2020/04/30/%E5%85%B3%E4%BA%8EsetTextSize%E5%A4%A7%E5%B0%8F%E4%B8%8D%E5%AF%B9%E7%9A%84%E9%97%AE%E9%A2%98/" class="article-date">
-    <time datetime="2020-04-30T07:47:24.000Z" itemprop="datePublished">2020-04-30</time>
-  </a>
-
-              </div>
-              <div class="article-category">
-                <a class="article-category-link" href="/categories/Android/">Android</a>
-              </div>
-            </article>
-          </div>
-        
+          <a class="card-link article-nav-link" href="/2020/04/30/%E5%85%B3%E4%BA%8EAndroid%20%E7%9A%84R%20cannot%20be%20resolved%20to%20a%20variable%E9%97%AE%E9%A2%98/"></a>
+          <strong class="article-nav-caption">Older</strong>
+          <p class="article-nav-title">
+            
+              关于Android 的R cannot be resolved to a variable问题
+            
+          </p>
+        </article>
       </div>
-    </div>
+    
   </div>
+</nav>
+
+      </section>
+    </div>
+  </article>
 </div>
-
-<!-- page container -->
-
 
     <!-- footer container -->
 <footer id="footer" class="footer">
